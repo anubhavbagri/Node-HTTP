@@ -7,19 +7,25 @@ const todos = [
 ];
 
 const server = http.createServer((req, res) => {
-  //   console.log(req);
-  //   console.log(req.method);
-  // const { headers, url, method } = req;
-  // console.log(headers, url, method);
+  /*
+  res.statusCode = 404;
   res.setHeader('Content-Type', 'application/json');
-  //lets you know what kind of server it is; if its engineX or express or whatever it might be
   res.setHeader('X-Powered-By', 'Node.js');
-  // res.write('<h1>Hello</h1>');
-  // res.write('<h2>Hello Again</h2>');
+  */
+  res.writeHead(400, {
+    'Content-Type': 'application/json',
+    'X-Powered-By': 'Node.js',
+  });
+  // res.writeHead(404, {
+  //   'Content-Type': 'application/json',
+  //   'X-Powered-By': 'Node.js',
+  // });
+
   res.end(
     JSON.stringify({
-      success: true,
-      data: todos,
+      success: false,
+      error: 'Please add email',
+      data: null,
     })
   );
 });

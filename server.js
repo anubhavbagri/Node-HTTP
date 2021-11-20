@@ -3,8 +3,11 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   //   console.log(req);
   //   console.log(req.method);
-  const { headers, url, method } = req;
-  console.log(headers, url, method);
+  // const { headers, url, method } = req;
+  // console.log(headers, url, method);
+  res.setHeader('Content-Type', 'text/html');
+  res.write('<h1>Hello</h1>');
+  res.write('<h2>Hello Again</h2>');
   res.end();
 });
 

@@ -12,10 +12,13 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'application/json');
   res.setHeader('X-Powered-By', 'Node.js');
   */
-  res.writeHead(400, {
+  res.writeHead(200, {
     'Content-Type': 'application/json',
     'X-Powered-By': 'Node.js',
   });
+
+  console.log(req.headers.authorization);
+
   // res.writeHead(404, {
   //   'Content-Type': 'application/json',
   //   'X-Powered-By': 'Node.js',
